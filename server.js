@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cors());
 
 // Ansluter till MongoDB.
-mongoose.connect("mongodb://localhost:27017/moment2").then(() => {
+mongoose.connect(process.env.MONGODB_URI).then(() => {
     console.log("Connected to the MongoDB-database");
 // Felmeddelande.
 }).catch((error) => {
