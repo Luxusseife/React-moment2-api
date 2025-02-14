@@ -58,9 +58,9 @@ app.get("/todo", async (req, res) => {
     try {
         let result = await Todo.find({});
 
-        // Kontroll av innehåll och meddelande om collection är tom.
+        // Kontroll av innehåll och meddelande om collection är tom. Resursen finns men är tom!
         if (result.length === 0) {
-            return res.status(404).json({ message: "No todos found" });
+            return res.status(200).json({ message: "No todos found" });
 
             // Om todos finns, skrivs dessa ut.
         } else {
